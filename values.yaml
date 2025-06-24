@@ -17,7 +17,8 @@ global:
   ## imagePullSecrets:
   ##   - myRegistryKeySecretName
   ##
-  imagePullSecrets: []
+  imagePullSecrets: 
+    - quay
   defaultStorageClass: ""
   ## Security parameters
   ##
