@@ -620,10 +620,10 @@ service:
 ingress:
   ## @param ingress.enabled Enable ingress record generation for WordPress
   ##
-  enabled: false
+  enabled: true
   ## @param ingress.pathType Ingress path type
   ##
-  pathType: ImplementationSpecific
+  pathType: Prefix
   ## @param ingress.apiVersion Force Ingress API version (automatically detected if not set)
   ##
   apiVersion: ""
@@ -631,10 +631,10 @@ ingress:
   ## This is supported in Kubernetes 1.18+ and required if you have more than one IngressClass marked as the default for your cluster .
   ## ref: https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/
   ##
-  ingressClassName: ""
+  ingressClassName: "openshift-default"
   ## @param ingress.hostname Default host for the ingress record. The hostname is templated and thus can contain other variable references.
   ##
-  hostname: wordpress.local
+  hostname: wordpress-ocp.apps.office.igotit.co.kr
   ## @param ingress.path Default path for the ingress record
   ## NOTE: You may need to set this to '/*' in order to use this with ALB ingress controllers
   ##
@@ -1171,7 +1171,7 @@ metrics:
 networkPolicy:
   ## @param networkPolicy.enabled Specifies whether a NetworkPolicy should be created
   ##
-  enabled: true
+  enabled: false
   ## @param networkPolicy.allowExternal Don't require server label for connections
   ## The Policy model to apply. When set to false, only pods with the correct
   ## server label will have network access to the ports server is listening
@@ -1245,7 +1245,7 @@ mariadb:
   ##      https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#creating-a-database-user-on-first-run
   ##
   auth:
-    rootPassword: "password"
+    rootPassword: "secretpassword"
     database: bitnami_wordpress
     username: bn_wordpress
     password: "password"
