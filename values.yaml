@@ -92,7 +92,7 @@ image:
   registry: demo-registry-quay-openshift-operators.apps.ocp4.office.igotit.co.kr
   repository: sykwon/wordpress
   tag: "1.0"
-  digest: "sha256:d62396d293dae5e5183c3f1771713dd1acd22453b0ac8334a6f87d12349586b7"
+  digest: "sha256:7562399bd8037eb6cb97344af216027490adf847142e1de993e0366b6a9619bb"
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
   ##
